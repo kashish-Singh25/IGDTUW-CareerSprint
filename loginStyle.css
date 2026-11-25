@@ -1,0 +1,205 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+}
+
+/* BODY BACKGROUND */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  /* background-color: #0b132b; SAME as index.html */
+}
+
+/* Background Image */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* 👇 yahan apni image ka path daalo */
+  background: 
+  url("./college2.jpeg") no-repeat center center/cover;
+
+  /* 👇 blur control */
+  filter: blur(3px);
+
+  /* blur ke edges fix karne ke liye */
+  transform: scale(1.1);
+
+  z-index: -1;
+}
+
+
+
+/* CENTER WRAPPER */
+.login-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* LOGIN BOX */
+.login-container {
+ /* align-items: center;
+  width: 380px;
+  background: rgba(20, 25, 45, 0.92);
+  border-radius: 14px;
+  padding: 40px 35px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  animation: slideUp 0.8s ease; */
+
+  width: 380px;
+  padding: 35px 30px;
+  border-radius: 16px;
+
+  background: rgba(20, 25, 45, 0.9);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+
+  text-align: center;
+}
+
+/* HEADING */
+.login-container h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* SUB TEXT */
+.login-container p {
+  color: #b5b9d6;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* INPUTS */
+.login-container input {
+  width: 100%;
+  padding: 13px 14px;
+  margin-bottom: 18px;
+  background: #0f1325;
+  border: 1px solid #2a2f55;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-container input::placeholder {
+  color: #8b90b3;
+}
+
+.login-container input:focus {
+  border-color: #4f7cff;
+  box-shadow: 0 0 0 2px rgba(79, 124, 255, 0.25);
+}
+
+/* BUTTON */
+.continue-btn {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #4f7cff, #6a5cff);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(79, 124, 255, 0.4);
+}
+
+/* NOTE */
+.login-note {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  font-size: 12px;
+  color: #9aa0c7;
+}
+
+/* ANIMATIONS */
+/* @keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+/* PAGE FADE OUT (SMOOTH TRANSITION) */
+/* .fade-out {
+  animation: fadeOut 0.2s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+} */
+
+
+  
+
+
+.login-wrapper {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* animation: fadeIn 0.1s ease forwards; */
+}
+
+/* .login-wrapper.exit {
+  animation: fadeOut 0.2s ease forwards;
+} */
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.03);
+  } */
+

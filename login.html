@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | IGDTUW CareerSprint</title>
+  <link rel="stylesheet" href="loginStyle.css">
+</head>
+
+<body class="login-body" style="visibility: hidden;" onload="document.body.style.visibility='visible'">
+
+  <div class="login-wrapper">
+    <div class="login-container">
+
+      <h2>Welcome to IGDTUW CareerSprint</h2>
+      <p>Please enter your details to continue</p>
+
+      <input type="text" id="username" placeholder="Full Name">
+      <input type="text" id="branch" placeholder="College / Branch">
+
+      <button class="continue-btn" onclick="submitForm()">Continue</button>
+
+      <span class="login-note">
+        *Used only for review & feedback purposes*
+      </span>
+
+    </div>
+  </div>
+
+  <!-- MAIN SCRIPT -->
+  <script src="script.js"></script>
+
+  <!-- FIREBASE -->
+  <script type="module" src="firebase.js"></script>
+
+  <!-- FORM HANDLER -->
+  <script>
+    function submitForm() {
+      const name = document.getElementById("username").value.trim();
+      const branch = document.getElementById("branch").value.trim();
+
+      if (!name || !branch) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      // Smooth fade-out before redirect
+      document.body.classList.add("fade-out");
+
+      // Save to Firebase
+      saveVisitor(name, branch);
+
+      // Redirect smoothly
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 500);
+    }
+  </script>
+
+</body>
+</html>

@@ -10,18 +10,11 @@
 </head>
 <body>
 
-  <!-- Simple Login Overlay
-  <div id="loginOverlay">
-    <div class="login-box">
-      <h2>Welcome to IGDTUW PlacePrep</h2>
   
-      <input type="text" id="studentName" placeholder="Enter your name">
-      <input type="text" id="studentBranch" placeholder="Enter your branch">
-  
-      <button id="continueBtn">Continue</button>
-    </div>
-  </div> -->
-  
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<script type="module" src="firebase.js"></script>
 
 
   <div class="marquee">
@@ -44,18 +37,86 @@
 </header>
 </div> 
 
+<section class="layout-container">
 
-<section class="grid">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <a href="oa.html" class="sidebar-item">OA Questions</a>
+    <a href="aptitude.html" class="sidebar-item">Aptitude</a>
+    <a href="cs.html" class="sidebar-item">CS Fundamentals</a>
+    <a href="interview.html" class="sidebar-item">Interview Ques.</a>
+    <a href="roadmap.html" class="sidebar-item">Roadmap</a>
+   
+    <a href="https://drive.google.com/file/d/1ijpCj58Eg431K2YDshdfZyxEnLWH1zYP/view?usp=drivesdk"
+       target="_blank"
+       class="sidebar-item">
+       Eligibility Criteria
+    </a>
+    
+    <a href="about.html" class="sidebar-item">About Us</a>
+    <a href="#" class="sidebar-item">FeedBack</a>
+  </aside>
+<!-- 
+  MAIN CONTENT  -->
+ 
 
-  <a href="oa.html" class="main-box">OA Questions</a> 
-  <a href="aptitude.html" class="main-box">Aptitude</a> 
-  <a href="cs.html" class="main-box">CS Fundamentals</a>
-  <a href="interview.html" class="main-box">Interview Ques.</a> 
-  <a href="roadmap.html" class="main-box">Roadmap</a> 
-  <a href="https://drive.google.com/file/d/1ijpCj58Eg431K2YDshdfZyxEnLWH1zYP/view?usp=drivesdk" class="main-box" target="_blank">Eligibility Criteria</a> 
+  <main class="main-content" id="intro-text">
+
+    <div class="content-flex">
+  
+      <!-- LEFT TEXT CONTENT -->
+      <div class="content-text">
+        <h2>Welcome to IGDTUW CareerSprint</h2>
+  
+        <p>
+          IGDTUW CareerSprint is a dedicated placement preparation platform
+          designed to help students prepare effectively for internships
+          and full-time roles.
+        </p>
+  
+        <p>
+          The platform provides company-specific Online Assessment questions,
+          aptitude practice, CS fundamentals, interview preparation resources,
+          and structured roadmaps to guide students throughout their journey.
+        </p>
+      </div>
+  
+      <!-- RIGHT ANIMATION -->
+      <div class="content-animation">
+  
+        <div id="container">
+          Make
+          <div id="flip">
+            <div><div>wOrK</div></div>
+            <div><div>lifeStyle</div></div>
+            <div><div>Everything</div></div>
+          </div>
+          AweSoMe!
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </main>
+  
 
 
 </section>
+
+<!-- AI SECTION START -->
+
+<div class="ai-section">
+
+  <h2>AI Placement Assistant 🤖</h2>
+  
+  <div id="chatBox"></div>
+  
+  <input type="text" id="userInput" placeholder="Ask about DSA, interviews, coding...">
+  
+  <button onclick="askAI()">Ask AI</button>
+  
+  </div>
 
 <!-- <footer> 2025 IGDTUW PlacePrep</footer> -->
 <footer class="footer">
@@ -103,10 +164,12 @@
           <span>Kashish (2nd Year, CSE)</span>
         </a>
 
-        <a href="https://www.linkedin.com/in/niharika-305545252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="linkedin-card">
+        <a href="" target="_blank" class="linkedin-card">
           <i class="fa-brands fa-linkedin"></i>
           <span>Niharika (3rd Year, IT)</span>
         </a>
+
+        <!-- https://www.linkedin.com/in/niharika-305545252?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app -->
       
         <a href="https://www.linkedin.com/in/kritika-linkedin" target="_blank" class="linkedin-card">
           <i class="fa-brands fa-linkedin"></i>
@@ -136,6 +199,8 @@
   </footer>
 
   <script src="script.js"></script>
+
+  
 
   
 

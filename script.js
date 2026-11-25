@@ -78,14 +78,21 @@ function openSection(section) {
   }
 
   
-//   function goBack() {
-//     window.location.href = "index.html";
+
+
+
+// function openDrive(link) {
+//     window.open(link, '_blank');
 //   }
 
-
 function openDrive(link) {
-    window.open(link, '_blank');
+  if (link && link.trim() !== "") {
+    window.open(link, "_blank");
+  } else {
+    alert("Drive link not added yet!");
   }
+}
+
 
   //roadmap
   function openTechRoadmap() {
@@ -98,45 +105,46 @@ function openDrive(link) {
   
   
   
-// Save user info
-// page load pe check
-// window.onload = function () {
-//   if (localStorage.getItem("studentName")) {
-//     document.getElementById("loginOverlay").style.display = "none";
-//   }
-// };
-
-// document.getElementById("continueBtn").addEventListener("click", function () {
-//   const name = document.getElementById("studentName").value.trim();
-//   const branch = document.getElementById("studentBranch").value.trim();
-
-//   if (name === "" || branch === "") {
-//     alert("Please fill both name and branch");
-//     return;
-//   }
-
-//   // store data
-//   localStorage.setItem("studentName", name);
-//   localStorage.setItem("studentBranch", branch);
-
-//   // IMPORTANT: overlay hide
-//   document.getElementById("loginOverlay").style.display = "none";
-// });
 
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.getElementById("continueBtn").addEventListener("click", function () {
-//     const name = document.getElementById("studentName").value.trim();
-//     const branch = document.getElementById("studentBranch").value.trim();
 
-//     if (name === "" || branch === "") {
-//       alert("Please fill both fields");
-//       return;
-//     }
 
-//     localStorage.setItem("studentName", name);
-//     localStorage.setItem("studentBranch", branch);
+// Smooth page transition
+document.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
 
-//     document.getElementById("loginOverlay").style.display = "none";
-//   });
-// });
+    if (href && !href.startsWith("http") && !href.startsWith("#")) {
+      e.preventDefault();
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    }
+  });
+});
+
+
+async function askAI(){
+
+  const input = document.getElementById("userInput").value;
+  
+  const response = await fetch("http://localhost:3000/chat",{
+  method:"POST",
+  headers:{
+  "Content-Type":"application/json"
+  },
+  body:JSON.stringify({
+  message:input
+  })
+  });
+  
+  const data = await response.json();
+  
+  const chatBox = document.getElementById("chatBox");
+  
+  chatBox.innerHTML += "<p><b>You:</b> "+input+"</p>";
+  chatBox.innerHTML += "<p><b>AI:</b> "+data.reply+"</p>";
+  
+  }
